@@ -2379,8 +2379,8 @@ strip:
 
 modules_install:
     $(MAKE) ARCH=$(ARCH) CROSS_COMPILE=$(CROSS_COMPILE) INSTALL_MOD_STRIP=1 -C $(KERNEL_SRC) M=$(shell pwd) modules_install
-	#install -p -m 644 $(MODULE_NAME).ko  $(MODDESTDIR)
-	#/sbin/depmod -a ${KVER}
+    #install -p -m 644 $(MODULE_NAME).ko  $(MODDESTDIR)
+    #/sbin/depmod -a ${KVER}
 
 install:
 	install -p -m 644 $(MODULE_NAME).ko  $(MODDESTDIR)
