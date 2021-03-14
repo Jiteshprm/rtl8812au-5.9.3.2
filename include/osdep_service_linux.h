@@ -313,7 +313,7 @@ __inline static int _enter_critical_mutex(_mutex *pmutex, _irqL *pirqL)
 	int ret = 0;
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(2, 6, 37))
 	/* mutex_lock(pmutex); */
-	ret = mutex_lock_interruptible(pmutex);
+	ret = mutex_lock_interruptible_nested(pmutex,SINGLE_DEPTH_NESTING);
 #else
 	ret = down_interruptible(pmutex);
 #endif
